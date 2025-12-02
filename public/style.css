@@ -61,10 +61,15 @@ body {
 }
 
 .response {
-    white-space: pre-wrap;
+    white-space: normal;
     line-height: 1.8;
     font-size: 1rem;
     /* 16px */
+}
+
+github-md {
+    display: block;
+    width: 100%;
 }
 
 .ipt {

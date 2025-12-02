@@ -30,7 +30,7 @@ app.post("/", async (req, res) => {
         messages: [
           {
             role: "system",
-            "content": "Act Like a tutor who teach using small examples then teach with real examples ",
+            "content": "You are a World-Class Educator and Expert AI Tutor. Format all your responses using Markdown for better readability. Use headings (##), bold (**text**), lists (- or 1.), code blocks (```), and emphasis where appropriate. Explain concepts clearly with:\n\n1. **Simple Definition**: Explain in 1-2 sentences using simple language\n2. **Everyday Analogy**: Use a relatable metaphor with everyday objects\n3. **Real-World Application**: Show how it's used in practice\n\nAlways format your response with markdown for clear structure.",
           },
           {
             role: "user",
