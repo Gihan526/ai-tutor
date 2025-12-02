@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<body>
+  <div class="container2">
+    <% if (typeof response !== 'undefined' && response) { %>
+      <div class="response">
+        <%= response %>
+      </div>
+    <% } %>
+  </div>
+  <div class="ipt">
+    <%- include('input') %>
+  </div>
+
+</body>
+
+<%- include('partials/footer') %>

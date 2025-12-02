@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mono', monospace;
+}
+
+.header {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+.header .logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 12px;
+    height: 76vh;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.response {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.ipt{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ipt input[type="text"] {
+    flex: 1;
+    max-width: 800px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.ipt button {
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ipt button:hover {
+    background-color: #333;
+}
