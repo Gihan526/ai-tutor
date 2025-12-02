@@ -168,7 +168,7 @@ body {
     .ipt {
         margin: 15px 5px;
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
         padding: 0 5px;
     }
 
@@ -221,7 +221,7 @@ body {
     .ipt {
         margin: 12px 5px;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         padding: 0 5px;
     }
 
@@ -274,7 +274,7 @@ body {
     .ipt {
         margin: 10px 3px;
         flex-direction: column;
-        gap: 8px;
+        gap: 15px;
         padding: 0 3px;
     }
 
