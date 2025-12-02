@@ -5,18 +5,29 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-height: 60px;
+    --input-area-height: 80px;
+    --safe-area-bottom: env(safe-area-inset-bottom, 20px);
+}
+
 body {
     min-height: 100vh;
+    
+    min-height: 100dvh;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
-    margin-top: 10px;
-    margin-bottom: 15px;
+    height: var(--header-height);
     display: flex;
     justify-content: center;
+    align-items: center;
     text-decoration: none;
     padding: 0 10px;
+    flex-shrink: 0;
 }
 
 .header .logo {
@@ -25,7 +36,8 @@ body {
     gap: 10px;
     text-decoration: none;
     color: black;
-    font-size: 24px;
+    font-size: 1.5rem;
+    /* 24px */
 }
 
 .header .logo img {
@@ -39,37 +51,51 @@ body {
     margin: 0 auto;
     border: 2px solid black;
     border-radius: 12px;
-    height: calc(100vh - 200px);
-    min-height: 400px;
+    flex: 1;
+    min-height: 0;
+    
     padding: 20px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
 }
 
 .response {
     white-space: pre-wrap;
     line-height: 1.8;
-    font-size: 16px;
+    font-size: 1rem;
+    /* 16px */
 }
 
-.ipt{
+.ipt {
     max-width: 1200px;
     width: 100%;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding: 0 10px;
+    flex-shrink: 0;
+    padding-bottom: var(--safe-area-bottom);
+}
+
+
+.ipt form {
     display: flex;
     gap: 10px;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 0 10px;
 }
 
 .ipt input[type="text"] {
     flex: 1;
-    max-width: 800px;
+    width: 100%;
+  
     padding: 15px;
     border: 2px solid black;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1rem;
+   
+    min-height: 48px;
+    
 }
 
 .ipt button {
@@ -78,32 +104,44 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1rem;
+    
     cursor: pointer;
+    min-height: 48px;
+    
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
 }
 
 .ipt button:hover {
     background-color: #333;
 }
 
-/* Mobile Responsive */
 
-/* Large tablets and small desktops (1024px and below) */
 @media (max-width: 1024px) {
     .container2 {
-        max-width: 95%;
-        height: calc(100vh - 180px);
+        max-width: 100%;
     }
-    
+
     .ipt {
-        max-width: 95%;
+        max-width: 100%;
     }
 }
 
-/* Tablets - iPad, iPad Pro, Samsung Tab (768px - 1023px) */
-@media (max-width: 1023px) and (min-width: 768px) {
+/* Mobile Devices (Portrait) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 5px;
+    }
+
+    .header {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
     .header .logo {
-        font-size: 20px;
+        font-size: 1.25rem;
+        /* 20px */
     }
 
     .header .logo img {
@@ -112,146 +150,38 @@ body {
     }
 
     .container2 {
-        padding: 18px;
-        height: calc(100vh - 170px);
-    }
-
-    .response {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    .ipt input[type="text"] {
-        max-width: 600px;
-        padding: 14px;
-        font-size: 15px;
-    }
-
-    .ipt button {
-        padding: 14px 25px;
-        font-size: 15px;
-    }
-}
-
-/* Large phones - iPhone 15 Pro Max, Samsung S24 Ultra, Pixel 8 Pro (428px - 767px) */
-@media (max-width: 767px) and (min-width: 428px) {
-    body {
-        padding: 5px;
-    }
-
-    .header {
-        margin-top: 8px;
-        margin-bottom: 10px;
-    }
-
-    .header .logo {
-        font-size: 18px;
-    }
-
-    .header .logo img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .container2 {
-        margin: 0 5px;
         padding: 15px;
-        height: calc(100vh - 160px);
         border-radius: 10px;
+        margin-bottom: 15px;
     }
 
     .response {
-        font-size: 14px;
+        font-size: 0.9375rem;
+        /* 15px */
         line-height: 1.6;
     }
 
-    .ipt {
-        margin: 15px 5px;
+    .ipt form {
         flex-direction: column;
-        gap: 20px;
-        padding: 0 5px;
+        gap: 10px;
     }
 
     .ipt input[type="text"] {
-        max-width: 100%;
         width: 100%;
         padding: 14px;
-        font-size: 15px;
     }
 
     .ipt button {
         width: 100%;
         padding: 14px;
-        font-size: 15px;
     }
 }
 
-/* Standard phones - iPhone 15, iPhone 14, Samsung S24 (390px - 427px) */
-@media (max-width: 427px) and (min-width: 375px) {
-    body {
-        padding: 5px;
-    }
 
-    .header {
-        margin-top: 8px;
-        margin-bottom: 10px;
-    }
-
+@media (max-width: 380px) {
     .header .logo {
-        font-size: 17px;
-    }
-
-    .header .logo img {
-        width: 36px;
-        height: 36px;
-    }
-
-    .container2 {
-        margin: 0 5px;
-        padding: 12px;
-        height: calc(100vh - 150px);
-        border-radius: 10px;
-    }
-
-    .response {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .ipt {
-        margin: 12px 5px;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 5px;
-    }
-
-    .ipt input[type="text"] {
-        max-width: 100%;
-        width: 100%;
-        padding: 13px;
-        font-size: 14px;
-    }
-
-    .ipt button {
-        width: 100%;
-        padding: 13px;
-        font-size: 14px;
-    }
-}
-
-/* Older/smaller phones - iPhone X, iPhone SE, smaller Android (320px - 374px) */
-@media (max-width: 374px) {
-    body {
-        padding: 3px;
-    }
-
-    .header {
-        margin-top: 5px;
-        margin-bottom: 8px;
-    }
-
-    .header .logo {
-        font-size: 15px;
+        font-size: 1.125rem;
+        
     }
 
     .header .logo img {
@@ -259,62 +189,43 @@ body {
         height: 32px;
     }
 
-    .container2 {
-        margin: 0 3px;
-        border-radius: 8px;
-        padding: 10px;
-        height: calc(100vh - 140px);
-    }
-
     .response {
-        font-size: 13px;
-        line-height: 1.5;
+        font-size: 0.875rem;
+        
     }
 
-    .ipt {
-        margin: 10px 3px;
-        flex-direction: column;
-        gap: 20px;
-        padding: 0 3px;
-    }
-
-    .ipt input[type="text"] {
-        max-width: 100%;
-        width: 100%;
-        padding: 12px;
-        font-size: 13px;
-    }
-
+    .ipt input[type="text"],
     .ipt button {
-        width: 100%;
         padding: 12px;
-        font-size: 13px;
+        min-height: 44px;
     }
 }
 
-/* Landscape mode for phones */
-@media (max-height: 500px) and (orientation: landscape) {
-    .container2 {
-        height: calc(100vh - 120px);
-        min-height: 200px;
+
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        height: 100vh;
+        
     }
-    
+
     .header {
-        margin-top: 5px;
-        margin-bottom: 5px;
+        display: none;
+        
     }
-    
-    .ipt {
-        margin: 10px auto;
+
+    .container2 {
+        margin-bottom: 10px;
+    }
+
+    .ipt form {
         flex-direction: row;
     }
-    
+
     .ipt input[type="text"] {
-        max-width: 70%;
+        flex: 1;
     }
-    
+
     .ipt button {
         width: auto;
-        padding: 12px 20px;
     }
 }
